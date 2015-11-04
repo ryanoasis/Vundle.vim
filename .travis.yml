@@ -8,4 +8,14 @@ script: |
   set rtp+=vader.vim
   set rtp+=vundle.vim
   set rtp+=.
-  VIMRC) -c 'Vader! test/*' -c 'qa!' > /dev/null
+  " do required 'stuff'
+  set nocompatible              " be iMproved, required
+  filetype off                  " required
+  call vundle#begin()
+  " let Vundle manage Vundle, required
+  Plugin 'VundleVim/Vundle.vim'
+  " more plugins go HERE
+  " All of your Plugins must be added before the following line
+  call vundle#end()            " required
+  filetype plugin indent on    " required
+  VIMRC) -c 'Vader! test/*' -c 'PluginList' -c 'qa!' > /dev/null
