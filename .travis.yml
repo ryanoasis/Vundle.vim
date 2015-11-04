@@ -2,8 +2,10 @@ language: vim
 
 before_script: |
   git clone https://github.com/junegunn/vader.vim.git
+  git clone https://github.com/VundleVim/Vundle.vim.git
 script: |
   vim -Nu <(cat << VIMRC
   set rtp+=vader.vim
+  set rtp+=vundle.vim
   set rtp+=.
   VIMRC) -c 'Vader! test/*' -c 'qa!' > /dev/null
